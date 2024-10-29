@@ -1,1 +1,38 @@
-dj
+services:
+  blog_1:
+    build: ./docker/httpd
+    container_name: blog-1
+    ports:
+      - 8051:80
+  
+  blog_2:
+    build: ./docker/httpd
+    container_name: blog-2
+    ports:
+      - 8052:80
+
+  blog_3:
+    build: ./docker/httpd
+    container_name: blog-3
+    ports:
+      - 8053:80
+
+  load_balancer:
+    build: ./docker/nginx
+    container_name: blog-lb
+    ports:
+      - 8949:80
+    depends_on:
+      - blog_1
+      - blog_2
+      - blog_3
+    links:
+      - blog_1 
+      - blog_2
+      - blog_3
+    delvelop:
+      watch:
+        - action: sync+restart
+          path: ./docker/nginx/default.conf
+          target: /etc/nginx/conf.d/default.conf
+
