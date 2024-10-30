@@ -15,14 +15,21 @@ services:
       - VIRTUAL_HOST=localhost
       - VIRTUAL_PORT=80
 
-  load_balancer:
+  controller:
+    images: ngrinder/controller
     ports:
-      - 8949:80
       - 8080:80
       - 16001:16001
       - 12000-12009:12000-12009
     depends_on:
       - blog
     volumes:
-      - /
+      - ~/ngrinder-controller:/opt/ngrinder-controller
+
+  agent:
+    images: ngrinder/agent
+    depends_on:
+      - blog
+    links:
+      - controller
 
