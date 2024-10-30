@@ -1,0 +1,19 @@
+[project]
+name = "kube1s"
+version = "0.3.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "hahahellooo", email = "hahahello777@gmail.com"},
+]
+dependencies = []
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = true
+
+[project.urls]
+Hompage = "https://github.com/hahahellooo/kube1s"
+Issues = "https://github.com/hahahellooo/kube1s/issues"

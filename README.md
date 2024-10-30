@@ -27,3 +27,8 @@ $ docker compose stop
 $ docker compose start
 $ docker compose down
 ```
+
+# COMPOSE SCALE IN & OUT
+```bash
+$ docker compose up -d --scale blog=5 --build
+```
