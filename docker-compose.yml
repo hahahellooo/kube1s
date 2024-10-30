@@ -16,11 +16,13 @@ services:
       - VIRTUAL_PORT=80
 
   load_balancer:
-    image: nginxproxy/nginx-proxy
     ports:
       - 8949:80
+      - 8080:80
+      - 16001:16001
+      - 12000-12009:12000-12009
     depends_on:
       - blog
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /
 
