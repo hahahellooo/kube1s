@@ -15,7 +15,7 @@ license = {text = "MIT"}
 distribution = true
 
 [project.scripts]
-auto_scale="kube1s.scale:auto_controll"
+auto_scale="scale:auto_controll"
 
 [project.urls]
 Hompage = "https://github.com/hahahellooo/kube1s"
