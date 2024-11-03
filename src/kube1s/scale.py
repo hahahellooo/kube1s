@@ -32,7 +32,7 @@ def auto_controll():
         if useCPU > 0.1 and time.time() >= max_time:
             print(f"현재 blog는 {blogcount}개, CPU 사용량은 {useCPU}로 10%를 넘었습니다.1분 이상 지속되어 {blogcount+1}개로 scale out을 진행합니다.")
             os.system(f"docker compose -f /home/hahahellooo/code/docker/kube1s/docker-compose.yml up -d --scale blog={blogcount+1}")
-            request = requests.post(url=api_url, headers =  {'Authorization':'Bearer ' + key}, data = {'message' : f'{blogcount+1}>개로 scale out 진행 중'})
+            request = requests.post(url=api_url, headers =  {'Authorization':'Bearer ' + key}, data = {'message' : f'{blogcount+1}개로 scale out 진행 중'})
     # 전체 CPU 사용량이 50%를 넘지만 1분 미만 지속되면
     # n-1개로 scale in
         elif useCPU> 0.1 and time.time() < max_time:
