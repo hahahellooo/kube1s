@@ -1,6 +1,6 @@
 [project]
 name = "kube1s"
-version = "0.5.0"
+version = "0.5.6"
 description = "Default template for PDM package"
 authors = [
     {name = "hahahellooo", email = "hahahello777@gmail.com"},
@@ -15,7 +15,7 @@ license = {text = "MIT"}
 distribution = true
 
 [project.scripts]
-auto-scale="kube1s.scale:auto_controll"
+auto-scaler="kube1s.scale:auto_controll"
 
 [project.urls]
 Hompage = "https://github.com/hahahellooo/kube1s"
