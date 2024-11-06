@@ -18,5 +18,5 @@ while true; do
   docker stats --no-stream --format "$timestamp,{{.Name}},{{.CPUPerc}},{{.MemPerc}}" >> $output_file
 
   # 10초 대기
-  sleep 10
+  sleep 30
 done
